@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './style.css';
 
 function App() {
   return (
     <div className="App">
+      {/* Bara de navigare */}
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Auto Catalog</h1>
+        <nav>
+          <ul>
+            <li><a href="#home">Acasă</a></li>
+            <li><a href="#catalog">Catalog</a></li>
+          </ul>
+        </nav>
       </header>
+
+      {/* Conținut principal */}
+      <main>
+      </main>
     </div>
   );
 }
