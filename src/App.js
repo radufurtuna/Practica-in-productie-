@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-router-dom';
 import Home from './Home';
 import Catalog from './Catalog';
 import './style.css';
@@ -12,7 +12,7 @@ function App() {
           <h1>Auto Catalog</h1>
           <nav>
             <ul>
-              <li><Link to="/">Acasă</Link></li>
+              <li><Link to="/home">Acasă</Link></li>
               <li><Link to="/catalog">Catalog</Link></li>
             </ul>
           </nav>
@@ -20,7 +20,8 @@ function App() {
 
         <main>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Navigate to="/home" />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/catalog" element={<Catalog />} />
           </Routes>
         </main>
