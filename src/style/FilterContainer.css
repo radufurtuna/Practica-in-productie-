@@ -1,36 +1,78 @@
 /* Container pentru filtre */
 .filter-container {
   position: absolute;
-  top: 40px;
-  right: 10px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 15px;
+  top: 50px; /* Ajustează poziția pentru a se potrivi cu designul */
+  right: 20px; /* Mai mult spațiu față de margine */
+  background-color: #fff; /* Fundal alb pentru contrast */
+  border: 1px solid #ccc; /* Bordură mai subtilă */
+  border-radius: 12px; /* Colțuri mai rotunjite */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Umbră mai pronunțată */
+  padding: 20px; /* Mai mult spațiu interior */
   z-index: 1000;
-  width: 250px;
+  width: 300px; /* Lățime mai mare pentru un aspect aerisit */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Tranziții pentru animație */
+  transform: translateY(-10px); /* Efect de ridicare */
+  opacity: 1;
 }
 
 .filter-container h3 {
   margin-top: 0;
-  font-size: 18px;
-  color: #333;
+  font-size: 20px; /* Dimensiune mai mare pentru titlu */
+  color: #007bff; /* Culoare albastră pentru titlu */
+  font-family: 'Roboto', sans-serif; /* Font modern */
+  text-align: center; /* Centrare pentru titlu */
+  margin-bottom: 15px; /* Spațiu sub titlu */
 }
 
 .filter-container label {
   display: block;
   margin-bottom: 10px;
   font-size: 14px;
-  color: #555;
+  color: #555; /* Culoare subtilă pentru text */
+  font-weight: bold; /* Text mai proeminent */
 }
 
 .filter-container input,
 .filter-container select {
   width: 100%;
-  padding: 5px;
+  padding: 10px; /* Mai mult spațiu interior */
   margin-top: 5px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: 1px solid #ccc; /* Bordură mai subtilă */
+  border-radius: 8px; /* Colțuri rotunjite */
   font-size: 14px;
+  font-family: 'Roboto', sans-serif; /* Font modern */
+  color: #333; /* Culoare pentru text */
+  background-color: #f9f9f9; /* Fundal deschis */
+  transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Tranziții pentru hover */
+}
+
+.filter-container input:focus,
+.filter-container select:focus {
+  border-color: #007bff; /* Bordură albastră la focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Efect de focus */
+  outline: none; /* Elimină conturul implicit */
+}
+
+.filter-container input::placeholder {
+  color: #aaa; /* Culoare pentru placeholder */
+}
+
+.filter-container button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  background-color: #007bff; /* Buton albastru */
+  color: #fff; /* Text alb */
+  border: none;
+  border-radius: 8px; /* Colțuri rotunjite */
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Tranziții pentru hover */
+}
+
+.filter-container button:hover {
+  background-color: #0056b3; /* Culoare mai închisă la hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Umbră la hover */
 }

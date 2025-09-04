@@ -1,0 +1,83 @@
+/* Container principal */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec); /* Gradient subtil */
+  min-height: 100vh; /* Ocupă întreaga înălțime a paginii */
+}
+
+/* Imaginea principală- masini*/
+.home-image {
+  width: 100%; /* Imaginea ocupă întreaga lățime */
+  max-width: 1300px; /* Lățime maximă */
+  height: auto; /* Păstrează proporțiile */
+  border-radius: 12px; /* Colțuri rotunjite */
+  animation: fadeIn 2s ease-in-out; 
+}
+
+/* Conținutul textului */
+.home-content {
+  text-align: center;
+  max-width: 800px; /* Lățime maximă pentru text */
+}
+
+/* Titlul principal */
+.home-title {
+  font-size: 2.5rem;
+  color: #007bff; /* Albastru vibrant */
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif; /* Font modern */
+  font-weight: bold;
+  text-transform: uppercase; /* Transformă textul în majuscule */
+  letter-spacing: 1px; /* Spațiere între litere */
+}
+
+/* Descrierea */
+.home-description {
+  font-size: 1.2rem;
+  color: #555; /* Culoare text subtilă */
+  margin-bottom: 30px;
+  line-height: 1.8; /* Spațiere între linii */
+  font-family: 'Roboto', sans-serif;
+}
+
+.home-description strong {
+  color: #007bff; /* Evidențiază textul */
+}
+
+/* Butonul */
+.home-button {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: #007bff; /* Albastru vibrant */
+  border: none;
+  border-radius: 8px; /* Colțuri rotunjite */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+
+.home-button:hover {
+  background-color: #0056b3; /* Albastru mai închis la hover */
+  transform: scale(1.05); /* Mărește butonul la hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Umbră la hover */
+}
+
+/* Animație pentru imagine */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

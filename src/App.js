@@ -3,13 +3,14 @@ import { BrowserRouter as Router, Routes, Route, Link, Navigate } from 'react-ro
 import Home from './pages/Home';
 import Catalog from './pages/Catalog';
 import './style/style.css';
+import logo from './images/imag.png';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <header className="App-header">
-          <h1>Auto Catalog</h1>
+           <img src={logo} alt="Auto Catalog Logo" className="App-logo" />
           <nav>
             <ul>
               <li><Link to="/home">Acasă</Link></li>

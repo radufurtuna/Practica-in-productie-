@@ -1,0 +1,33 @@
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333; /* Fundal închis */
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: 'Roboto', sans-serif;
+    margin-top: auto;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+/* Iconițe sociale */
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.footer-social a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #007bff; 
+}

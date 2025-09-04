@@ -4,6 +4,7 @@ import FilterContainer from '../components/FilterContainer';
 import CarList from '../components/CarList';
 import { fetchCars } from '../service/carService';
 import '../style/style.css';
+import Footer from '../components/Footer';
 
 function Catalog() {
   const [cars, setCars] = useState([]);
@@ -45,12 +46,14 @@ function Catalog() {
   if (error) return <p style={{ color: 'red' }}>Eroare: {error}</p>;
 
   return (
-    <div>
-      <h1>Catalog de Mașini</h1>
+  <>
+   <div className="catalog-container">
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} onToggleFilters={() => setShowFilters(!showFilters)} />
       {showFilters && <FilterContainer onFilterChange={handleFilterChange} />}
       <CarList cars={filteredCars} />
     </div>
+      <Footer />
+    </>
   );
 }
 
