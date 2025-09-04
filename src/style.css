@@ -28,14 +28,38 @@
   text-decoration: none;
 }
 
-.search-bar {
-  margin: 10px 0;
-  padding: 8px;
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 5px 10px;
+  background-color: #f9f9f9;
   width: 100%;
-  max-width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Stil pentru input */
+.search-bar {
+  flex: 1;
+  border: none;
+  outline: none;
   font-size: 16px;
+  background: transparent;
+}
+
+/* Stil pentru iconiță */
+.search-icon {
+  font-size: 20px;
+  color: #333;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.search-icon:hover {
+  color: #007bff; /* Schimbă culoarea la hover */
 }
 
 .car-image {
