@@ -1,0 +1,15 @@
+
+.settings-icon-container {
+  position: relative;
+}
+
+.search-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+  margin: 10px;
+}
+
+.search-icon:hover {
+  color: #007bff;
+}

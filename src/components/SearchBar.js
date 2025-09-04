@@ -1,8 +1,7 @@
 import React from 'react';
-import SettingsIcon from './SettingsIcon'; 
+import { AiFillSetting } from 'react-icons/ai';
 
-function SearchBar({ searchTerm, setSearchTerm }) {
-
+function SearchBar({ searchTerm, setSearchTerm, onToggleFilters }) {
   return (
     <div className="search-bar-container">
       <input
@@ -12,7 +11,8 @@ function SearchBar({ searchTerm, setSearchTerm }) {
         onChange={(e) => setSearchTerm(e.target.value)}
         className="search-bar"
       />
-      <SettingsIcon /> {/* Iconița */}
+      {/* Iconița de setări */}
+      <AiFillSetting className="search-icon" onClick={onToggleFilters} />
     </div>
   );
 }

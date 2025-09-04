@@ -1,0 +1,36 @@
+/* Container pentru filtre */
+.filter-container {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  z-index: 1000;
+  width: 250px;
+}
+
+.filter-container h3 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.filter-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.filter-container input,
+.filter-container select {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
