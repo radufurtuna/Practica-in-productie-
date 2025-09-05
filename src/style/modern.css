@@ -1,0 +1,37 @@
+/* Modern single-page layout */
+
+.modern-app { font-family: Manrope, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: #2B2C35; }
+
+.modern-nav { position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(180%) blur(8px); background: rgba(255,255,255,0.7); display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; border-bottom: 1px solid #f3f4f6; }
+.modern-logo { height: 36px; width: auto; border-radius: 8px; }
+.modern-brand { font-weight: 800; margin-left: 10px; }
+.modern-nav__left { display: flex; align-items: center; }
+.modern-nav__links a { margin-left: 16px; text-decoration: none; color: #2B2C35; opacity: 0.8; }
+.modern-nav__links a:hover { opacity: 1; }
+
+.modern-hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; max-width: 1200px; margin: 40px auto; padding: 0 24px; align-items: center; }
+.modern-hero__text h1 { font-size: 48px; line-height: 1.1; margin: 0 0 12px; font-weight: 900; }
+.modern-hero__text p { font-size: 18px; color: #747A88; margin: 0 0 20px; }
+.modern-cta { display: inline-block; background: #2B59FF; color: #fff; padding: 12px 20px; border-radius: 999px; text-decoration: none; }
+.modern-cta:hover { background: #1f3ecf; }
+.modern-hero__art { position: relative; height: 560px; display: flex; align-items: center; justify-content: center; background: transparent; }
+.modern-hero__image { width: auto; height: 70%; object-fit: contain; }
+
+.modern-section { max-width: 1200px; margin: 60px auto; padding: 0 24px; }
+.modern-section--muted { background: #F5F8FF; padding: 40px 24px; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; }
+.modern-section__header h2 { margin: 0 0 8px; font-size: 28px; }
+.modern-section__header p { margin: 0 0 16px; color: #747A88; }
+
+.modern-status { color: #2B2C35; }
+.modern-status.error { color: #ef4444; }
+
+.modern-contact { display: flex; gap: 12px; flex-wrap: wrap; }
+.chip { background: #fff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 8px 14px; text-decoration: none; color: #2B2C35; }
+.chip:hover { background: #f9fafb; }
+
+@media (max-width: 900px) {
+  .modern-hero { grid-template-columns: 1fr; }
+  .modern-hero__art { height: 420px; }
+}
+
+

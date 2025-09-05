@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import SearchBar from '../components/SearchBar';
 import FilterContainer from '../components/FilterContainer';
 import CarList from '../components/CarList';
@@ -6,7 +6,7 @@ import { fetchCars } from '../service/carService';
 import '../style/style.css';
 import Footer from '../components/Footer';
 
-function Catalog() {
+export default function Catalog() {
   const [cars, setCars] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [filters, setFilters] = useState({});
@@ -18,7 +18,6 @@ function Catalog() {
     const loadCars = async () => {
       try {
         const data = await fetchCars();
-        console.log(data);
         setCars(data);
         setLoading(false);
       } catch (error) {
@@ -26,7 +25,6 @@ function Catalog() {
         setLoading(false);
       }
     };
-
     loadCars();
   }, []);
 
@@ -35,33 +33,32 @@ function Catalog() {
   };
 
   const filteredCars = cars.filter((car) => {
-  const title = car.title?.toLowerCase() || '';
-  const content = car.content?.toLowerCase() || '';
-  const additional = car.additional?.toLowerCase() || '';
+    const title = car.title?.toLowerCase() || '';
+    const content = car.content?.toLowerCase() || '';
+    const additional = car.additional?.toLowerCase() || '';
 
-  const matchesSearch = title.includes(searchTerm.toLowerCase());
-  const matchesFilters =
-    (!filters.title || title.includes(filters.title.toLowerCase())) &&
-    (!filters.content || content.includes(filters.content.toLowerCase())) &&
-    (!filters.additional || additional.includes(filters.additional.toLowerCase())) &&
-    (!filters.wr || car.wr?.toLowerCase().includes(filters.wr.toLowerCase()));
+    const matchesSearch = title.includes(searchTerm.toLowerCase());
+    const matchesFilters =
+      (!filters.title || title.includes(filters.title.toLowerCase())) &&
+      (!filters.content || content.includes(filters.content.toLowerCase())) &&
+      (!filters.additional || additional.includes(filters.additional.toLowerCase())) &&
+      (!filters.wr || car.wr?.toLowerCase().includes(filters.wr.toLowerCase()));
 
-  return matchesSearch && matchesFilters;
-});
+    return matchesSearch && matchesFilters;
+  });
 
   if (loading) return <p>Se încarcă...</p>;
   if (error) return <p style={{ color: 'red' }}>Eroare: {error}</p>;
 
   return (
-  <>
-   <div className="catalog-container">
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} onToggleFilters={() => setShowFilters(!showFilters)} />
-      {showFilters && <FilterContainer onFilterChange={handleFilterChange} />}
-      <CarList cars={filteredCars} />
-    </div>
+    <>
+      <div className="catalog-container">
+        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} onToggleFilters={() => setShowFilters(!showFilters)} />
+        {showFilters && <FilterContainer onFilterChange={handleFilterChange} />}
+        <CarList cars={filteredCars} />
+      </div>
       <Footer />
     </>
   );
 }
 
-export default Catalog;

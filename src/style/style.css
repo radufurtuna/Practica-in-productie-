@@ -1,3 +1,17 @@
+/* Rând comun pentru search + filtre */
+.search-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto 12px;
+  padding: 0 24px;
+}
+
+@media (max-width: 900px) {
+  .search-row { grid-template-columns: 1fr; }
+}
 body {
   background: url('https://www.transparenttextures.com/patterns/white-wall.png'); /* Imagine de fundal discretă */
  
@@ -32,7 +46,7 @@ body {
 }
 
 .App-header nav ul li a {
-  color: #ffcc00; /* Culoare aurie pentru linkuri */
+  color: #000000; /* Culoare aurie pentru linkuri */
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease; /* Tranziție pentru hover */
@@ -47,19 +61,27 @@ body {
 .search-bar-container {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
-  border-radius: 50px; /* Colțuri rotunjite */
-  padding: 10px 20px;
-  background-color: #fff;
+  gap: 10px;
+  border: 2px solid #d1d5db;
+  border-radius: 999px;
+  padding: 12px 18px;
+  background-color: #ffffff;
   width: 100%;
-  max-width: 500px;
-  margin: 30px auto; /* Spațiu mai mare deasupra */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adaugă o umbră */
-  transition: box-shadow 0.3s ease; /* Tranziție pentru hover */
+  max-width: 720px;
+  margin: 40px auto 0;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .search-bar-container:hover {
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Umbră mai mare la hover */
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
+  border-color: #c7cdd6;
+}
+
+/* Evidențiere când inputul e în focus */
+.search-bar-container:focus-within {
+  border-color: #2B59FF;
+  box-shadow: 0 0 0 4px rgba(43, 89, 255, 0.12);
 }
 
 /* Stil pentru input */
@@ -67,7 +89,7 @@ body {
   flex: 1;
   border: none;
   outline: none;
-  font-size: 16px;
+  font-size: 18px;
   background: transparent;
   font-family: 'Roboto', sans-serif;
   color: #333;
@@ -80,57 +102,51 @@ body {
 /* Stil pentru iconiță */
 .search-icon {
   font-size: 24px;
-  color: #007bff;
+  color: #2B2C35;
   cursor: pointer;
-  margin-left: 10px;
-  transition: color 0.3s ease; /* Tranziție pentru hover */
+  margin-left: 6px;
+  transition: color 0.2s ease;
 }
 
 .search-icon:hover {
-  color: #0056b3; /* Culoare mai închisă la hover */
+  color: #2B59FF;
 }
 
 /* Stil pentru imaginea mașinii */
 .car-image {
   width: 100%; 
-  height: auto; 
-  border-radius: 8px; 
-  margin: 10px 0; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adaugă o umbră */
-  transition: transform 0.3s ease; /* Tranziție pentru hover */
+  height: 160px;
+  object-fit: contain;
+  margin: 12px 0;
 }
 
-.car-image:hover {
-  transform: scale(1.05); /* Mărește imaginea la hover */
-}
 
 /* Stil pentru lista de mașini */
 .car-list {
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grilă flexibilă */
-  gap: 20px; 
-  list-style: none; 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  list-style: none;
   padding: 0;
-  margin: 30px 0;
+  margin: 40px 0 0;
 }
 
 
 .car-item {
-  background-color: #fff; 
-  border: 1px solid #ddd;
-  border-radius: 12px; 
-  padding: 20px; 
-  text-align: center; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  font-family: 'Roboto', sans-serif; 
-  color: #333; 
-  font-size: 16px; 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;  
+  background-color: #F5F8FF;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  padding: 24px;
+  text-align: left;
+  box-shadow: none;
+  color: #2B2C35;
+  font-size: 16px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .car-item:hover {
-  transform: translateY(-5px); 
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+  background-color: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
 .car-item p {
@@ -138,7 +154,8 @@ body {
 }
 
 .car-item strong {
-  color: #007bff; 
+  font-size: 22px;
+  font-weight: 700;
 }
 
 .catalog-container {
