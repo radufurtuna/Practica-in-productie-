@@ -18,6 +18,7 @@ function Catalog() {
     const loadCars = async () => {
       try {
         const data = await fetchCars();
+        console.log(data);
         setCars(data);
         setLoading(false);
       } catch (error) {
@@ -34,13 +35,19 @@ function Catalog() {
   };
 
   const filteredCars = cars.filter((car) => {
-    const title = car.title?.toLowerCase() || '';
-    const matchesSearch = title.includes(searchTerm.toLowerCase());
-    const matchesFilters =
-      (!filters.title || title.includes(filters.title.toLowerCase()));
+  const title = car.title?.toLowerCase() || '';
+  const content = car.content?.toLowerCase() || '';
+  const additional = car.additional?.toLowerCase() || '';
 
-    return matchesSearch && matchesFilters;
-  });
+  const matchesSearch = title.includes(searchTerm.toLowerCase());
+  const matchesFilters =
+    (!filters.title || title.includes(filters.title.toLowerCase())) &&
+    (!filters.content || content.includes(filters.content.toLowerCase())) &&
+    (!filters.additional || additional.includes(filters.additional.toLowerCase())) &&
+    (!filters.wr || car.wr?.toLowerCase().includes(filters.wr.toLowerCase()));
+
+  return matchesSearch && matchesFilters;
+});
 
   if (loading) return <p>Se încarcă...</p>;
   if (error) return <p style={{ color: 'red' }}>Eroare: {error}</p>;

@@ -1,8 +1,8 @@
 /* Container pentru filtre */
 .filter-container {
   position: absolute;
-  top: 50px; /* Ajustează poziția pentru a se potrivi cu designul */
-  right: 20px; /* Mai mult spațiu față de margine */
+  top: 150px; /* Ajustează poziția pentru a se potrivi cu designul */
+  right: 140px; /* Mai mult spațiu față de margine */
   background-color: #fff; /* Fundal alb pentru contrast */
   border: 1px solid #ccc; /* Bordură mai subtilă */
   border-radius: 12px; /* Colțuri mai rotunjite */
